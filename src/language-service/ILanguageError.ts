@@ -5,5 +5,5 @@ export interface ILanguageError {
 	endColumn: number;
 	message: string;
 
-	expectedTokens: Array<string>;
+	//expectedTokens: Array<string>;
 }

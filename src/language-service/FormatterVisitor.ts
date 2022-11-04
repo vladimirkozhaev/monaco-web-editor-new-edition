@@ -65,9 +65,10 @@ import { Question_exprContext } from '../ANTLR/ExpressionsParserGrammarParser';
 import { ExpressionsParserGrammarParser } from '../ANTLR/ExpressionsParserGrammarParser';
 import { ExpressionsParserGrammarLexer } from '../ANTLR/ExpressionsParserGrammarLexer';
 
-import { ExpressionsParserGrammarVisitor } from './../ANTLR/ExpressionsParserGrammarVisitor';
+
 import { ExpressionsErrorListener } from './ExpressionsErrorListener';
 import { ILanguageError } from './ILanguageError';
+import { ExpressionsParserGrammarVisitor } from '../ANTLR/ExpressionsParserGrammarVisitor';
 
 
 

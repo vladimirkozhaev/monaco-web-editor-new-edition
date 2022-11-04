@@ -1,8 +1,9 @@
 import { ExpressionsParserGrammarParser, ExpressionContext } from "../ANTLR/ExpressionsParserGrammarParser";
 import { ExpressionsParserGrammarLexer } from "../ANTLR/ExpressionsParserGrammarLexer";
 import { ANTLRInputStream, CommonTokenStream } from "antlr4ts";
-import { ExpressionsErrorListener } from "../lang-util/ExpressionsErrorListener";
-import { ILanguageError } from "../lang-util/ILanguageError";
+import { ILanguageError } from "./ILanguageError";
+import { ExpressionsErrorListener } from "./ExpressionsErrorListener";
+
 
 
 function parse(code: string): {ast:ExpressionContext, errors: ILanguageError[]} {

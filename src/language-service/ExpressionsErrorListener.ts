@@ -53,7 +53,7 @@ export class ExpressionsErrorListener implements ANTLRErrorListener<any> {
 			endColumn: charPositionInLine,
 			message,
 
-			expectedTokens: expectedTokensStr
+			//expectedTokens: expectedTokensStr
 		});
 
 	}

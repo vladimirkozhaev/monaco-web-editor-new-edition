@@ -1,33 +1,30 @@
 {
-	"name": "todolangeditor",
-	"version": "1.0.0",
-	"description": "TodoLang editor",
-	"license": "UNLICENSED",
-	"scripts": {
-		"test": "jest -c jest.config.unit.js",
-		"start": "webpack-dev-server",
-		"antlr4ts": "antlr4ts ./ExpressionsParserGrammar.g4 -visitor -o ./src/ANTLR"
-	},
-	"dependencies": {
-		"antlr4ts": "0.5.0-alpha.4",
-		"monaco-editor-core": "0.18.1",
-		"react": "16.8.6",
-		"react-dom": "16.8.6"
-	},
-	"devDependencies": {
-		"@types/react": "16.8.12",
-		"source-map-loader": "^1.0.0",
-		"@types/react-dom": "16.8.3",
-		"antlr4ts-cli": "0.5.0-alpha.4",
-		"css-loader": "3.3.0",
-		"html-webpack-plugin": "3.2.0",
-		"style-loader": "1.0.1",
-		"ts-loader": "5.3.3",
-		"typescript": "^4.8",
-		"webpack": "4.29.6",
-		"webpack-cli": "3.3.0",
-		"webpack-dev-server": "3.2.1",
-		"ts-jest": "^29.0.3",
-		"@types/jest":"29.0.3"
-	}
+  "name": "todolangeditor",
+  "version": "1.0.0",
+  "description": "TodoLang editor",
+  "scripts": {
+    "start": "webpack-dev-server --hot --open",
+   "antlr4ts": "antlr4ts ./ExpressionsParserGrammar.g4 -visitor -o ./src/ANTLR"
+  },
+  "author": "Open",
+  "license": "ISC",
+  "dependencies": {
+    "antlr4ts": "^0.5.0-alpha.3",
+    "monaco-editor-core": "^0.18.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.8.3",
+    "antlr4ts-cli": "^0.5.0-alpha.3",
+    "css-loader": "^3.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^1.0.1",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.2",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
+  }
 }

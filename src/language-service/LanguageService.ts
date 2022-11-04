@@ -2,9 +2,10 @@
 import { parseAndGetASTRoot, parseAndGetSyntaxErrors } from "./Parser";
 
 import { ExpressionContext } from "../ANTLR/ExpressionsParserGrammarParser";
-import { calcFormatted } from './../lang-util/FormatterVisitor'
-import { ILanguageError } from "../lang-util/ILanguageError";
+
 import * as monaco from "monaco-editor-core";
+import { ILanguageError } from "./ILanguageError";
+import { calcFormatted } from "./FormatterVisitor";
 
 export default class TodoLangLanguageService {
 	validate(code: string): ILanguageError[] {
@@ -16,44 +17,44 @@ export default class TodoLangLanguageService {
 		return calcFormatted(code).value
 	}
 
-	autoSuggest(code: string, pos: monaco.Position): Array<monaco.languages.CompletionItem> {
-
-		const syntaxErrors: ILanguageError[] = parseAndGetSyntaxErrors(code);
-		let completeonItems: Array<monaco.languages.CompletionItem> = syntaxErrors.filter(err => err.startLineNumber == pos.lineNumber && err.startColumn == pos.column).map(e => {
-			let ci: monaco.languages.CompletionItem = {
-
-				label: e.message,
-				/**
-				 * The kind of this completion item. Based on the kind
-				 * an icon is chosen by the editor.
-				 */
-				kind: monaco.languages.CompletionItemKind.Field,
-
-				insertText: e.expectedTokens[0],
-				range: {
-					/**
-					 * Line number on which the range starts (starts at 1).
-	 				*/
-					startLineNumber: e.startLineNumber,
-					/**
-					 * Column on which the range starts in line `startLineNumber` (starts at 1).
-					 */
-					startColumn: e.startColumn,
-					/**
-					 * Line number on which the range ends.
-					 */
-					endLineNumber: e.endLineNumber,
-					/**
-					 * Column on which the range ends in line `endLineNumber`.
-					 */
-					endColumn: e.endColumn
-				}
-			}
-			return ci;
-		})
-
-		return completeonItems;
-	}
+//	autoSuggest(code: string, pos: monaco.Position): Array<monaco.languages.CompletionItem> {
+//
+//		const syntaxErrors: ILanguageError[] = parseAndGetSyntaxErrors(code);
+//		let completeonItems: Array<monaco.languages.CompletionItem> = syntaxErrors.filter(err => err.startLineNumber == pos.lineNumber && err.startColumn == pos.column).map(e => {
+//			let ci: monaco.languages.CompletionItem = {
+//
+//				label: e.message,
+//				/**
+//				 * The kind of this completion item. Based on the kind
+//				 * an icon is chosen by the editor.
+//				 */
+//				kind: monaco.languages.CompletionItemKind.Field,
+//
+//				insertText: e.expectedTokens[0],
+//				range: {
+//					/**
+//					 * Line number on which the range starts (starts at 1).
+//	 				*/
+//					startLineNumber: e.startLineNumber,
+//					/**
+//					 * Column on which the range starts in line `startLineNumber` (starts at 1).
+//					 */
+//					startColumn: e.startColumn,
+//					/**
+//					 * Line number on which the range ends.
+//					 */
+//					endLineNumber: e.endLineNumber,
+//					/**
+//					 * Column on which the range ends in line `endLineNumber`.
+//					 */
+//					endColumn: e.endColumn
+//				}
+//			}
+//			return ci;
+//		})
+//
+//		return completeonItems;
+//	}
 }
 
 // function checkSemanticRules(ast: TodoExpressionsContext): ITodoLangError[] {

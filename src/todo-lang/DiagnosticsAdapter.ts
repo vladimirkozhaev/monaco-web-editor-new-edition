@@ -1,7 +1,8 @@
 import * as monaco from "monaco-editor-core";
 import { WorkerAccessor } from "./setup";
 import { languageID } from "./config";
-import { ILanguageError } from "../lang-util/ILanguageError";
+import { ITodoLangError } from "../language-service/TodoLangErrorListener";
+import { ILanguageError } from "../language-service/ILanguageError";
 
 export default class DiagnosticsAdapter {
     constructor(private worker: WorkerAccessor) {
@@ -20,7 +21,6 @@ export default class DiagnosticsAdapter {
         monaco.editor.getModels().forEach(onModelAdd);
     }
     private async validate(resource: monaco.Uri): Promise<void> {
-		alert("validate:"+resource)
         // get the worker proxy
         const worker = await this.worker(resource)
         // call the validate methode proxy from the langaueg service and get errors
@@ -29,7 +29,6 @@ export default class DiagnosticsAdapter {
         const model = monaco.editor.getModel(resource);
         // add the error markers and underline them with severity of Error
         monaco.editor.setModelMarkers(model, languageID, errorMarkers.map(toDiagnostics));
-      
 
     }
 }
