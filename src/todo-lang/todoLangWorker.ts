@@ -8,23 +8,28 @@ import { ILanguageError } from "../language-service/ILanguageError";
 
 export class TodoLangWorker {
 
-    private _ctx: IWorkerContext;
-    private languageService: TodoLangLanguageService;
-    constructor(ctx: IWorkerContext) {
-        this._ctx = ctx;
-        this.languageService = new TodoLangLanguageService();
-    }
+	private _ctx: IWorkerContext;
+	private languageService: TodoLangLanguageService;
+	constructor(ctx: IWorkerContext) {
+		this._ctx = ctx;
+		this.languageService = new TodoLangLanguageService();
+	}
 
-    doValidation(): Promise<ILanguageError[]> {
-        const code = this.getTextDocument();
-        return Promise.resolve(this.languageService.validate(code));
-    }
-    format(code: string): Promise<string>{
-        return Promise.resolve(this.languageService.format(code));
-    }
-    private getTextDocument(): string {
-        const model = this._ctx.getMirrorModels()[0];// When there are multiple files open, this will be an array
-        return model.getValue();
-    }
+	doValidation(): Promise<ILanguageError[]> {
+		const code = this.getTextDocument();
+		return Promise.resolve(this.languageService.validate(code));
+	}
+	format(code: string): Promise<string> {
+		return Promise.resolve(this.languageService.format(code));
+	}
+
+//	suggest(code: string, line: number, charPosInLine: number) {
+//		return Promise.resolve(this.languageService.autoSuggest(code, line, charPosInLine))
+//	}
+
+	private getTextDocument(): string {
+		const model = this._ctx.getMirrorModels()[0];// When there are multiple files open, this will be an array
+		return model.getValue();
+	}
 
 }

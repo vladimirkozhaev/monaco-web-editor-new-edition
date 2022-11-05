@@ -5,6 +5,7 @@ import { TodoLangWorker } from "./todoLangWorker";
 import { WorkerManager } from "./WorkerManager";
 import DiagnosticsAdapter from "./DiagnosticsAdapter";
 import TodoLangFormattingProvider from "./TodoLangFormattingProvider";
+import { TodoCompleteonItemProvider } from "./TodoCompleteonItemProvider";
 
 export function setupLanguage() {
     (window as any).MonacoEnvironment = {
@@ -26,6 +27,7 @@ export function setupLanguage() {
         //Call the errors provider
         new DiagnosticsAdapter(worker);
         monaco.languages.registerDocumentFormattingEditProvider(languageID, new TodoLangFormattingProvider(worker));
+        monaco.languages.registerCompletionItemProvider(languageID, new TodoCompleteonItemProvider(worker))
     });
 
 }
