@@ -10,7 +10,7 @@ export class TodoCompleteonItemProvider implements monaco.languages.CompletionIt
 	provideCompletionItems(model: monaco.editor.ITextModel, position: monaco.Position, context: monaco.languages.CompletionContext, token: monaco.CancellationToken){
 
 		
-		return this.suggest(model.uri, model.getValue(), position.lineNumber,position.c)
+		return this.suggest(model.uri, model.getValue(), position.lineNumber,position.column)
 
 	}
 
@@ -18,8 +18,11 @@ export class TodoCompleteonItemProvider implements monaco.languages.CompletionIt
 		// get the worker proxy
 		const worker = await this.worker(r);
 		// call the validate methode proxy from the langaueg service and get errors
-		return await worker.suggest(code, line,charPosInLine);
-
+		//return await worker.suggest(code, line,charPosInLine);
+		let ci:monaco.languages.CompletionList={
+			suggestions:[]
+		}
+		return ci;
 		
 	}
 

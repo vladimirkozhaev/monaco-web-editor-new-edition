@@ -66,9 +66,9 @@ import { ExpressionsParserGrammarParser } from '../ANTLR/ExpressionsParserGramma
 import { ExpressionsParserGrammarLexer } from '../ANTLR/ExpressionsParserGrammarLexer';
 
 
+import { ExpressionsParserGrammarVisitor } from '../ANTLR/ExpressionsParserGrammarVisitor';
 import { ExpressionsErrorListener } from './ExpressionsErrorListener';
 import { ILanguageError } from './ILanguageError';
-import { ExpressionsParserGrammarVisitor } from '../ANTLR/ExpressionsParserGrammarVisitor';
 
 
 

@@ -2,7 +2,8 @@ import * as monaco from "monaco-editor-core";
 
 import Uri = monaco.Uri;
 import { TodoLangWorker } from './todoLangWorker';
-import { languageID } from './config';
+import { languageID } from "./config";
+
 
 export class WorkerManager {
 

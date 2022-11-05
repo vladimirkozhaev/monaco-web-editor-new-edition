@@ -1,5 +1,6 @@
 import * as monaco from "monaco-editor-core";
-import { WorkerAccessor } from "./setup";
+import { WorkerAccessor } from "../language-service/setup";
+
 
 export default class TodoLangFormattingProvider implements monaco.languages.DocumentFormattingEditProvider {
 

@@ -1,11 +1,13 @@
 
-import { parseAndGetASTRoot, parseAndGetSyntaxErrors } from "./Parser";
+
 
 import { ExpressionContext } from "../ANTLR/ExpressionsParserGrammarParser";
 
 import * as monaco from "monaco-editor-core";
-import { ILanguageError } from "./ILanguageError";
-import { calcFormatted } from "./FormatterVisitor";
+import { ILanguageError } from "../todo-lang/ILanguageError";
+import { calcFormatted } from "../todo-lang/FormatterVisitor";
+import { parseAndGetASTRoot, parseAndGetSyntaxErrors } from "../todo-lang/parser";
+
 
 export default class TodoLangLanguageService {
 	validate(code: string): ILanguageError[] {

@@ -5,7 +5,7 @@ module.exports = {
     entry: {
         app: './src/index.tsx',
         "editor.worker": 'monaco-editor-core/esm/vs/editor/editor.worker.js',
-        "todoLangWorker": './src/todo-lang/todolang.worker.ts'
+        "todoLangWorker": './src/language-service/todolang.worker.ts'
     },
     output: {
         globalObject: 'self',

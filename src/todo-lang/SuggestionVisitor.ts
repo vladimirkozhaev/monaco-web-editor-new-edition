@@ -4,10 +4,10 @@ import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor
 import { ParseTree } from "antlr4ts/tree/ParseTree";
 import { ExpressionsParserGrammarLexer } from "../ANTLR/ExpressionsParserGrammarLexer";
 import { ExpressionContext, ExpressionsParserGrammarParser } from "../ANTLR/ExpressionsParserGrammarParser";
-import { ExpressionsErrorListener } from "../language-service/ExpressionsErrorListener";
-import { ILanguageError } from "../language-service/ILanguageError";
 
 import { ExpressionsParserGrammarVisitor } from './../ANTLR/ExpressionsParserGrammarVisitor';
+import { ILanguageError } from "./ILanguageError";
+import { ExpressionsErrorListener } from "./ExpressionsErrorListener";
 
 
 

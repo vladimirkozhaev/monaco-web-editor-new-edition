@@ -2,7 +2,8 @@ import * as monaco from "monaco-editor-core";
 
 import IWorkerContext = monaco.worker.IWorkerContext;
 import TodoLangLanguageService from "../language-service/LanguageService";
-import { ILanguageError } from "../language-service/ILanguageError";
+import { ILanguageError } from "../todo-lang/ILanguageError";
+
 
 
 
